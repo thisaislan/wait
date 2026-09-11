@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #23272a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    color: #f0f2f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    position: relative;
+}
+
+.card {
+    background: #2c2f33;
+    border-radius: 1.8rem;
+    padding: 2.5rem 2rem 2rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    border: 1px solid #40444b;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Language buttons – floating top-right */
+.lang-float {
+    position: absolute;
+    top: 0.8rem;
+    right: 1.2rem;
+    display: flex;
+    gap: 0.4rem;
+    z-index: 5;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid #5865f2;
+    color: #b9bbbe;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1.2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+    background: #5865f2;
+    color: #fff;
+    border-color: #5865f2;
+}
+
+.lang-btn.active {
+    background: #5865f2;
+    color: #fff;
+    border-color: #5865f2;
+    box-shadow: 0 0 8px rgba(88, 101, 242, 0.4);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.8rem;
+    margin-top: 0.4rem;
+}
+
+.accent {
+    color: #5865f2;
+}
+
+.link-box {
+    display: flex;
+    gap: 0.6rem;
+    background: #1e2124;
+    border-radius: 1.2rem;
+    padding: 0.3rem 0.3rem 0.3rem 1.2rem;
+    border: 1px solid #40444b;
+    transition: border 0.2s;
+}
+
+.link-box:focus-within {
+    border-color: #5865f2;
+}
+
+#linkInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #dcddde;
+    font-size: 0.95rem;
+    font-family: 'Menlo', 'Monaco', monospace;
+    padding: 0.7rem 0;
+    min-width: 0;
+}
+
+#linkInput::selection {
+    background: #5865f244;
+}
+
+.btn-primary {
+    background: #5865f2;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7rem 1.4rem;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(88, 101, 242, 0.3);
+}
+
+.btn-primary:hover {
+    background: #6b77f5;
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(88, 101, 242, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}
+
+.status-msg {
+    height: 1.8rem;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: #57f287;
+    text-align: center;
+    transition: opacity 0.2s;
+}
+
+/* ----- message view ----- */
+.msg-body {
+    background: #1e2124;
+    border-radius: 1.8rem;
+    padding: 2rem 1.8rem;
+    margin: 0.4rem 0 1.8rem;
+    border: 1px solid #40444b;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.msg-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 500;
+    color: #f0f2f5;
+    word-break: break-word;
+}
+
+.msg-time {
+    text-align: center;
+    color: #b9bbbe;
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+    border-top: 1px dashed #40444b;
+    padding-top: 0.8rem;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.create-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #00a8fc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.create-link:hover {
+    color: #4db8ff;
+    text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 540px) {
+    .card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 1.8rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+        margin-top: 0.2rem;
+    }
+    .link-box {
+        flex-wrap: wrap;
+        background: transparent;
+        padding: 0;
+        border: none;
+        gap: 0.6rem;
+    }
+    #linkInput {
+        background: #1e2124;
+        padding: 0.8rem 1.2rem;
+        border-radius: 1.2rem;
+        border: 1px solid #40444b;
+        width: 100%;
+        font-size: 0.85rem;
+    }
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+    }
+    .msg-text {
+        font-size: 1.2rem;
+    }
+    .lang-float {
+        top: 0.4rem;
+        right: 0.8rem;
+    }
+    .create-link {
+    font-size: 0.85rem;
+    margin-top: 1.2rem;
+}
+}

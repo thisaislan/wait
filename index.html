@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Open Please... : )" />
+    <meta property="og:description" content="You'll find out when you open it!" />
+    <meta property="og:image" content="https://thisaislan.github.io/wait/preview.png" />
+    <meta property="og:url" content="https://thisaislan.github.io/wait/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wait" />
+
+
+    <title>Wait · time message</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+
+            <!-- Language buttons (top-right) -->
+            <div class="lang-float">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="pt">PT</button>
+            </div>
+
+            <!-- ====== COPY VIEW ====== -->
+            <div id="view-copy">
+                <h1 id="mainTitle">Send a <span class="accent">Wait</span> Message</h1>
+                <div class="link-box">
+                    <input type="text" id="linkInput" readonly spellcheck="false" />
+                    <button id="copyBtn" class="btn-primary">Copy</button>
+                </div>
+                <div id="copyStatus" class="status-msg"></div>
+            </div>
+
+            <!-- ====== MESSAGE VIEW ====== -->
+            <div id="view-message" style="display:none;">
+                <div id="msgBody" class="msg-body">
+                    <p id="msgText" class="msg-text"></p>
+                    <p id="msgTime" class="msg-time"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Create link (message view only) -->
+        <a href="https://thisaislan.github.io/wait/" class="create-link" id="createLink" style="display:none;">Create your wait link</a>
+    </div>
+
+    <script src="messages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
